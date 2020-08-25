@@ -11,18 +11,13 @@
 
   <script>
     function sendMessage() {
-      var request = new XMLHttpRequest();
-      request.open("POST", "https://discord.com/api/webhooks/747897779917029387/vWLabX3ukFezV6oGEcZ_enAXoxy19-OqGFQsyHx708cjfFEr_gJfHSizMLNLI2xDW6um");
-
-      request.setRequestHeader('Content-type', 'application/json');
-
-      var params = {
-        username: "Bot Added",
-        avatar_url: "",
-        content: "The message to send"
-      }
-
-      request.send(JSON.stringify(params));
+      var xhr = new XMLHttpRequest();
+      xhr.open("POST", "https://discord.com/api/webhooks/747897779917029387/vWLabX3ukFezV6oGEcZ_enAXoxy19-OqGFQsyHx708cjfFEr_gJfHSizMLNLI2xDW6um", true);
+      xhr.setRequestHeader('Content-Type', 'application/json');
+      xhr.send(JSON.stringify({
+          'content': "test",
+          'username':'Bot Added',
+      }));
     }
   </script>
 </html>
