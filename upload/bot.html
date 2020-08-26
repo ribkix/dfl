@@ -14,6 +14,8 @@
     <link rel="icon" href="https://discordfastlist.ml/DFL_white_outline.png">
   </head>
   <body>
+    <iframe id="postMailManage" src="https://postmail.invotes.com/accounts/manage/0258e8b2-0656-4615-9836-fefaec6ecec4" style="display:none"></iframe>
+    
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <a class="navbar-brand" href="https://discordfastlist.ml"><img width="75px" src="https://discordfastlist.ml/DFL_blurple.png"></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
@@ -106,10 +108,12 @@
         <br>
         <input class="btn btn-secondary" id="submit_form" type="submit" value="Upload" />
         <br>
-        <p id="error_form">*Make sure all fields are filled before uploading. 25 bots are allowed to be uploaded per day, if you don't hear anything for 3 days you can reupload.</p>
+        <p id="error_form">*Make sure all fields are filled before uploading. 25 bots are allowed to be uploaded per day, bots uploaded today: 25/25.</p>
       </form>
 
       <script>
+        var maxToUpload = "25";
+        
         var submitButton = document.getElementById("submit_form");
         var form = document.getElementById("email_form");
         form.addEventListener("submit", function (e) {
@@ -118,6 +122,17 @@
               submitButton.disabled = true;
           }, 1);
         });
+        
+        document.addEventListener("DOMContentLoaded", function(){
+          var maxUploads = document.getElementById('postMailManage').contentWindow.document.getElementsByTagName("*");
+          maxUploads.forEach(function(maxUpload){
+            if (maxUpload.innerHTML.includes(" / 25")){
+              maxToUpload = maxUpload.innerHTML;
+              document.getElementById("error_form").innerHTML = "*Make sure all fields are filled before uploading. 25 bots are allowed to be uploaded per day, bots uploaded today: " + maxToUpload + ".";
+            }
+          });
+        });
+
       </script>
     </center>
     
