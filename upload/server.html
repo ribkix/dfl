@@ -1,1 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="https://discordfastlist.ml/bootstrap.min.css">
+    <script src="https://discordfastlist.ml/jquery-3.5.1.js"></script>
+    <script src="https://discordfastlist.ml/bootstrap.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Bot | DiscordFastList</title>
+    <meta name="description" content="Upload your Discord bot to DiscordFastList.">
+    <meta name="keywords" content="discord,bot,bots,server,servers,upload,fast">
+    <meta property="og:image" content="https://discordfastlist.ml/DFL_white_outline.png">
+    <meta name="theme-color" content="#7289DA">
+    <link rel="icon" href="https://discordfastlist.ml/DFL_white_outline.png">
+  </head>
+  <body>
+    <iframe id="postMailManage" src="https://postmail.invotes.com/accounts/manage/0258e8b2-0656-4615-9836-fefaec6ecec4" style="display:none"></iframe>
+    
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="https://discordfastlist.ml"><img width="75px" src="https://discordfastlist.ml/DFL_blurple.png"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
+      <div class="collapse navbar-collapse" id="navbarColor02">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="https://discordfastlist.ml">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://discord.gg/KmQACA" target="_blank">Discord Server</a>
+          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="https://discordfastlist.ml/bots">Bots</a>
+          </li> -->
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="https://discordfastlist.ml/servers">Servers</a>
+          </li> -->
+          <li class="nav-item active dropdown">
+            <a class="nav-link active dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Upload <span class="sr-only">(current)</span></a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="https://discordfastlist.ml/upload/bot">Bot</a>
+            </div>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="https://discordfastlist.ml/upload/server">Server <span class="sr-only">(current)</span></a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    
+    <br><br>
+    
+    <center>
+      <form action="https://postmail.invotes.com/send" method="post" id="email_form">
+        <input type="hidden" name="success_url" value="." />
+        <input type="hidden" name="error_url" value="." />
+        <input style="display: none;" type="text" name="subject" value="Bot Added Website" />
+        <textarea id="Message" style="display: none;" name="text" placeholder="Message">A server has been added to discordfastist.ml</textarea>
+        <div class="form-group row">
+          <label for="Email" class="col-sm-2 col-form-label">Email / Discord Name + Tag (optional if you want an E-mail/DM when your server is checked)</label>
+          <div class="col-sm-10">
+            <input id="Email" class="form-control-plaintext" type="text" name="extra_BotName" placeholder="email@example.com OR BruhDev#1337" />
+          </div>
+        </div>
+        <br>
+        <div class="form-group row">
+          <label for="ServerName" class="col-sm-2 col-form-label">Server Name</label>
+          <div class="col-sm-10">
+            <input id="ServerName" class="form-control-plaintext" type="text" name="extra_BotName" placeholder="Epic Server" />
+          </div>
+        </div>
+        <br>
+        <div class="form-group row">
+          <label for="Description" class="col-sm-2 col-form-label">Server Description</label>
+          <div class="col-sm-10">
+            <input id="Description" class="form-control-plaintext" type="text" name="extra_ClientID" placeholder="747895585268301868" />
+          </div>
+        </div>
+        <br>
+        <div class="form-group row">
+          <label for="Invite" class="col-sm-2 col-form-label">Invite Link</label>
+          <div class="col-sm-10">
+            <input id="Invite" class="form-control-plaintext" type="text" name="extra_Invite" placeholder="https://discord.gg/KmQACA" />
+          </div>
+        </div>
+        <br>
+        <div class="form-group row">
+          <label for="Creator" class="col-sm-2 col-form-label">Server Creator</label>
+          <div class="col-sm-10">
+            <input id="Creator" class="form-control-plaintext" type="text" name="extra_Creator" placeholder="BruhDev#1337" />
+          </div>
+        </div>
+        <br>
+        <input type="hidden" name="access_token" value="g1inszi8hsiblci0fj2b0sqo" />
+        <br>
+        <input class="btn btn-secondary" id="submit_form" type="submit" value="Upload" />
+        <br>
+        <p id="error_form">*Make sure all fields are filled before uploading. 25 servers are allowed to be uploaded per day, servers uploaded today: 25 / 25.</p>
+      </form>
+
+      <script>
+        var submitButton = document.getElementById("submit_form");
+        var form = document.getElementById("email_form");
+        form.addEventListener("submit", function (e) {
+          setTimeout(function() {
+              submitButton.value = "Uploading...";
+              submitButton.disabled = true;
+          }, 1);
+        });
+
+      </script>
+    </center>
+    
+    <br><br>
+  </body>
+</html>
+<style>
+  body {
+    background-color: #7289DA;
+    color: #FFFFFF;
+    overflow-x: hidden;
+  }
+  
+  .form-control-plaintext {
+    background-color: #FFFFFF;
+    width: 95%;
+    margin-right: 5%;
+    color: black;
+    border: #FFF solid 5px;
+    border-radius: 10px;
+  }
+</style>
