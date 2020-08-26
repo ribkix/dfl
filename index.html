@@ -22,15 +22,22 @@
     </script>
   </head>
   <body>
-    <form id="contact-form">
-        <input type="hidden" name="contact_number">
-        <label>Name</label>
-        <input type="text" name="user_name">
-        <label style="display:none;">Email</label>
-        <input style="display:none;" type="email" name="user_email" value="ribdev.software@gmail.com">
-        <label>Message</label>
-        <textarea name="message"></textarea>
-        <input type="submit" value="Send">
+    <form action="https://postmail.invotes.com/send" method="post" id="email_form">
+      <input type="text" name="subject" placeholder="Subject" />
+      <textarea name="text" placeholder="Message"></textarea>
+      <input type="hidden" name="access_token" value="6chl90lp23aq1t5fwrhaeuhl" />
+      <input id="submit_form" type="submit" value="Send" />
     </form>
+
+    <script>
+        var submitButton = document.getElementById("submit_form");
+        var form = document.getElementById("email_form");
+        form.addEventListener("submit", function (e) {
+            setTimeout(function() {
+                submitButton.value = "Sending...";
+                submitButton.disabled = true;
+            }, 1);
+        });
+    </script>
   </body>
 </html>
