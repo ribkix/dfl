@@ -108,7 +108,7 @@
         <br>
         <input class="btn btn-secondary" id="submit_form" type="submit" value="Upload" />
         <br>
-        <p id="error_form">*Make sure all fields are filled before uploading. 25 bots are allowed to be uploaded per day, bots uploaded today: 25/25.</p>
+        <p id="error_form">*Make sure all fields are filled before uploading. 25 bots are allowed to be uploaded per day, bots uploaded today: 25 / 25.</p>
       </form>
 
       <script>
@@ -125,10 +125,19 @@
         
         document.addEventListener("DOMContentLoaded", function(){
           var maxUploads = document.getElementById('postMailManage').contentWindow.document.querySelectorAll("*");
+          console.log("maxUploads ---");
+          console.log(maxUploads);
           maxUploads.forEach(function(maxUpload){
+            console.log("maxUpload ---");
+            console.log(maxUpload);
             if (maxUpload.innerHTML.includes(" / 25")){
+              console.log("--- maxUpload includes ' / 25' ---");
               maxToUpload = maxUpload.innerHTML;
+              console.log("--- maxToUpload");
+              console.log(maxToUpload);
               document.getElementById("error_form").innerHTML = "*Make sure all fields are filled before uploading. 25 bots are allowed to be uploaded per day, bots uploaded today: " + maxToUpload + ".";
+            } else {
+              console.log("--- maxUpload doesn't include ' / 25' ---")
             }
           });
         });
