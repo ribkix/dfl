@@ -3,14 +3,30 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Discord Webhook Tutorial</title>
+    <title>DiscordFastList</title>
   </head>
   <body>
     <form action="https://postmail.invotes.com/send" method="post" id="email_form">
-      <input type="text" name="subject" placeholder="Subject" />
-      <textarea name="text" placeholder="Message"></textarea>
+      <input type="hidden" name="success_url" value="." />
+      <input type="hidden" name="error_url" value="." />
+      <input style="display: none;" type="text" name="subject" value="Bot Added Website" />
+      <input type="text" name="extra_BotName" placeholder="Bot Name" />
+      <br>
+      <input type="text" name="extra_ClientID" placeholder="Client ID" />
+      <br>
+      <input type="text" name="extra_ClientID" placeholder="Client ID" />
+      <br>
+      <input type="text" name="extra_Invite" placeholder="Invite Link" />
+      <br>
+      <input type="text" name="extra_Prefix" placeholder="Prefix" />
+      <br>
+      <input type="text" name="extra_EntryPoint" placeholder="Help Command" />
+      <br>
+      <input type="text" name="extra_Creator" placeholder="Creator ID" />
+      <br>
       <input type="hidden" name="access_token" value="6chl90lp23aq1t5fwrhaeuhl" />
-      <input id="submit_form" type="submit" value="Send" />
+      <br>
+      <input id="submit_form" type="submit" value="Upload" />
     </form>
 
     <script>
@@ -18,7 +34,7 @@
         var form = document.getElementById("email_form");
         form.addEventListener("submit", function (e) {
             setTimeout(function() {
-                submitButton.value = "Sending...";
+                submitButton.value = "Uploading...";
                 submitButton.disabled = true;
             }, 1);
         });
