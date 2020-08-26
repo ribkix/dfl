@@ -112,8 +112,6 @@
       </form>
 
       <script>
-        var maxToUpload = "25";
-        
         var submitButton = document.getElementById("submit_form");
         var form = document.getElementById("email_form");
         form.addEventListener("submit", function (e) {
@@ -121,11 +119,6 @@
               submitButton.value = "Uploading...";
               submitButton.disabled = true;
           }, 1);
-        });
-        
-        document.addEventListener("DOMContentLoaded", function(){
-          maxToUpload = document.getElementById('postMailManage').contentWindow.document.querySelectorAll("li")[2].innerText.replace("Daily Limit: ","");
-          document.getElementById("error_form").innerHTML = "*Make sure all fields are filled before uploading. 25 bots are allowed to be uploaded per day, bots uploaded today: " + maxToUpload + ".";
         });
 
       </script>
