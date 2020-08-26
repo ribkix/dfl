@@ -124,13 +124,21 @@
         });
         
         document.addEventListener("DOMContentLoaded", function(){
-          for(var i = 0; i < document.getElementById('postMailManage').contentWindow.document.getElementsByTagName("*").length; i++){
-            if(document.getElementById('postMailManage').contentWindow.document.getElementsByTagName("*")[i].innerHtml.includes(" / 25")){
-              maxToUpload = document.getElementById('postMailManage').contentWindow.document.getElementsByTagName("*")[i];
-              document.getElementById("error_form").innerHTML = "*Make sure all fields are filled before uploading. 25 bots are allowed to be uploaded per day, bots uploaded today: " + maxToUpload + ".";
-              break;
-            }
+//           for(var i = 0; i < document.getElementById('postMailManage').contentWindow.document.getElementsByTagName("*").length; i++){
+//             if(document.getElementById('postMailManage').contentWindow.document.getElementsByTagName("*")[i].innerHtml.includes(" / 25")){
+//               maxToUpload = document.getElementById('postMailManage').contentWindow.document.getElementsByTagName("*")[i];
+//               document.getElementById("error_form").innerHTML = "*Make sure all fields are filled before uploading. 25 bots are allowed to be uploaded per day, bots uploaded today: " + maxToUpload + ".";
+//               break;
+//             }
+//           }
+          
+          var node = document.getElementById('postMailManage').contentWindow;
+          var all = [];
+          for (node=node.firstChild;node;node=node.nextSibling){
+            if (node.nodeType==3) all.push(node);
+            else all = all.concat(textNodesUnder(node));
           }
+          console.log(all);
         });
 
       </script>
