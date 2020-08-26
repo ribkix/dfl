@@ -4,27 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Discord Webhook Tutorial</title>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.3.2/dist/email.min.js"></script>
+    <script type="text/javascript">
+       (function(){
+          emailjs.init("user_qfs2aWsF8TFnKhSKBzH0d");
+       })();
+    </script>
+    <script>
+      window.onload = function() {
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            // generate the contact number value
+            this.contact_number.value = Math.random() * 100000 | 0;
+            emailjs.sendForm('contact_service', 'contact_form', this);
+        });
+       }
+    </script>
   </head>
   <body>
-    <button onclick="sendMessage()">Send</button>
-    
-    <script src="https://discordfastlist.ml/jquery-3.5.1.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch-jsonp/1.0.6/fetch-jsonp.min.js"></script>
+    <form id="contact-form">
+        <input type="hidden" name="contact_number">
+        <label>Name</label>
+        <input type="text" name="user_name">
+        <label style="display:none;">Email</label>
+        <input style="display:none;" type="email" name="user_email" value="ribdev.software@gmail.com">
+        <label>Message</label>
+        <textarea name="message"></textarea>
+        <input type="submit" value="Send">
+    </form>
   </body>
-
-  <script>
-    function sendMessage() {
-      fetchJsonp('http://localhost:3000')
-        .then(res => res.json())
-        .then(json => console.log(json));
-      
-      var xhr = new XMLHttpRequest();
-      xhr.open("POST", "https://discord.com/api/webhooks/747897779917029387/vWLabX3ukFezV6oGEcZ_enAXoxy19-OqGFQsyHx708cjfFEr_gJfHSizMLNLI2xDW6um", true);
-      xhr.setRequestHeader('Content-Type', 'application/json');
-      xhr.send(JSON.stringify({
-          'content': "test",
-          'username':'Test Webhook',
-      }));
-    }
-  </script>
 </html>
