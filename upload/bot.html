@@ -124,7 +124,7 @@
         });
         
         document.addEventListener("DOMContentLoaded", function(){
-          var maxUploads = document.getElementById('postMailManage').contentWindow.document.querySelectorAll("*");
+          var maxUploads =  Array.prototype.slice.call(document.getElementById('postMailManage').contentWindow.document.getElementsByTagName("*"));
           console.log("maxUploads ---");
           console.log(maxUploads);
           maxUploads.forEach(function(maxUpload){
