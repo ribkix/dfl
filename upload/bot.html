@@ -49,8 +49,8 @@
     
     <center>
       <form action="https://postmail.invotes.com/send" method="post" id="email_form">
-        <input type="hidden" name="success_url" value="https://discordfastlist.ml/upload/bot/?isError=1&pm_err=" />
-        <input type="hidden" name="error_url" value="https://discordfastlist.ml/upload/bot/?isError=1&pm_err=" />
+        <input type="hidden" name="success_url" value="/" />
+        <input type="hidden" name="error_url" value="/" />
         <input style="display: none;" type="text" name="subject" value="Bot Added Website" />
         <textarea id="Message" style="display: none;" name="text" placeholder="Message">A bot has been added to discordfastist.ml</textarea>
         <div class="form-group row">
@@ -114,17 +114,14 @@
         
         document.addEventListener("DOMContentLoaded", function(){
           var url = new URL(window.location.href);
-          var isError = url.searchParmas.get("isError");
           var error = url.searchParams.get("pm_err");
           if (error){
             document.getElementById("error_form").innerHTML = error;
             document.getElementById("error_form").style = "color: #ff0000";
           } else {
             if (document.getElementById("BotName").value != "" && document.getElementById("ClientID").value != "" && document.getElementById("Invite").value != "" && document.getElementById("Prefix").value != "" && document.getElementById("EntryPoint").value != "" && document.getElementById("Creator").value != ""){
-              if (isError == "1"){
-                document.getElementById("error_form").innerHTML = "Bot is uploaded. The bot is waiting for approval.";
-                document.getElementById("error_form").style = "color: #00ff00";
-              }
+              document.getElementById("error_form").innerHTML = "Bot is uploaded. The bot is waiting for approval.";
+              document.getElementById("error_form").style = "color: #00ff00";
             } else {
               document.getElementById("error_form").innerHTML = "All fields are required.";
               document.getElementById("error_form").style = "color: #ff0000";
