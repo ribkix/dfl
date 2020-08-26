@@ -7,6 +7,8 @@
   </head>
   <body>
     <button onclick="sendMessage()">Send</button>
+    
+    <script src="https://discordfastlist.ml/jquery-3.5.1.js"></script>
   </body>
 
   <script>
@@ -20,6 +22,15 @@
           'username':'Test Webhook',
       }));
       document.domain = "discordfastlist.ml";
+      
+      $.ajax({
+        method: 'GET',
+        url: 'http://localhost:3000',
+        dataType: 'jsonp',
+        success: (xhr) => {
+         console.log(xhr);
+        }
+      })
     }
   </script>
 </html>
