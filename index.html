@@ -13,25 +13,14 @@
 
   <script>
     function sendMessage() {
-      fetch(
-        'https://discord.com/api/webhooks/747897779917029387/vWLabX3ukFezV6oGEcZ_enAXoxy19-OqGFQsyHx708cjfFEr_gJfHSizMLNLI2xDW6um',
-        {
-          method: 'post',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            // the username to be displayed
-            username: 'Bot Added',
-            // the avatar to be displayed
-            avatar_url:
-              'https://cdn.discordapp.com/avatars/747897779917029387/2331a519aa7edaff2a752c40727138d8.png',
-            // contents of the message to be sent
-            content:
-              'test',
-          }),
-        }
-      );
+      var xhr = new XMLHttpRequest();
+      xhr.open("POST", "https://cors-anywhere.herokuapp.com/https://discord.com/api/webhooks/747897779917029387/vWLabX3ukFezV6oGEcZ_enAXoxy19-OqGFQsyHx708cjfFEr_gJfHSizMLNLI2xDW6um", true);
+      xhr.setRequestHeader('Content-Type', 'application/json');
+      xhr.setRequestHeader("Origin", 'maximum.blog');
+      xhr.send(JSON.stringify({
+          'content': "test",
+          'username':'Test Webhook',
+      }));
     }
   </script>
 </html>
