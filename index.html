@@ -11,31 +11,47 @@
       <input type="hidden" name="error_url" value="." />
       <input style="display: none;" type="text" name="subject" value="Bot Added Website" />
       <textarea style="display: none;" name="text" placeholder="Message">A bot has been added to discordfastist.ml</textarea>
-      <input type="text" name="extra_BotName" placeholder="Bot Name" />
+      <input id="BotName" type="text" name="extra_BotName" placeholder="Bot Name" />
       <br>
-      <input type="text" name="extra_ClientID" placeholder="Client ID" />
+      <input id="ClientID" type="text" name="extra_ClientID" placeholder="Client ID" />
       <br>
-      <input type="text" name="extra_Invite" placeholder="Invite Link" />
+      <input id="Invite" type="text" name="extra_Invite" placeholder="Invite Link" />
       <br>
-      <input type="text" name="extra_Prefix" placeholder="Prefix" />
+      <input id="Prefix" type="text" name="extra_Prefix" placeholder="Prefix" />
       <br>
-      <input type="text" name="extra_EntryPoint" placeholder="Help Command" />
+      <input id="EntryPoint" type="text" name="extra_EntryPoint" placeholder="Help Command" />
       <br>
-      <input type="text" name="extra_Creator" placeholder="Creator ID" />
+      <input id="Creator" type="text" name="extra_Creator" placeholder="Creator ID" />
       <br>
       <input type="hidden" name="access_token" value="6chl90lp23aq1t5fwrhaeuhl" />
       <br>
       <input id="submit_form" type="submit" value="Upload" />
+      <br>
+      <p id="error_form"></p>
     </form>
 
     <script>
         var submitButton = document.getElementById("submit_form");
         var form = document.getElementById("email_form");
         form.addEventListener("submit", function (e) {
-            setTimeout(function() {
-                submitButton.value = "Uploading...";
-                submitButton.disabled = true;
-            }, 1);
+          setTimeout(function() {
+              submitButton.value = "Uploading...";
+              submitButton.disabled = true;
+          }, 1);
+          var url = new URL(window.location.href);
+          var error = url.searchParams.get("pm_err");
+          if (error){
+            document.getElementById("error_form").innerHTML = error;
+            document.getElementById("error_form").style = "color: #ff0000";
+          } else {
+            if (document.getElementById("BotName").value != "" && document.getElementById("ClientID").value != "" && document.getElementById("Invite").value != "" && document.getElementById("Prefix").value != "" && document.getElementById("EntryPoint").value != "" && document.getElementById("Creator").value != ""){
+              document.getElementById("error_form").innerHTML = "All fields are required.";
+              document.getElementById("error_form").style = "color: #ff0000";
+            } else {
+              document.getElementById("error_form").innerHTML = "Bot is uploaded. The bot is waiting for approval.";
+              document.getElementById("error_form").style = "color: #00ff00";
+            }
+          }
         });
     </script>
   </body>
