@@ -44,8 +44,7 @@
         </ul>
         <div class="form-group" style="width: 20%;" onchange="searchMode();">
           <select id="searchModeSelect" class="custom-select">
-            <option selected="">Bots</option>
-            <option value="1">Bots</option>
+            <option value="1" selected>Bots</option>
             <option value="2">Servers</option>
           </select>
         </div>
@@ -113,7 +112,7 @@
     var combobox, inputBots, inputServers, comboboxValue;
     combobox = document.getElementById("searchModeSelect");
     inputBots = document.getElementById("searchBotsInput");
-    inputServers = document.getElementByid("searchBotsServers");
+    inputServers = document.getElementById("searchBotsServers");
     comboboxValue = combobox.options[combobox.selectedIndex].text;
     if (comboboxValue == "Bots"){
       inputServers.style.display = "none";
