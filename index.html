@@ -118,8 +118,9 @@
         if (txtValue.toUpperCase().indexOf(filter) > -1) {
           li[i].getElementsByTagName("div")[0].getElementsByTagName("h5")[0].scrollIntoView({ block: "center",  behavior: "smooth" });
           li[i].style.backgroundColor = "#f39c12";
-        } else {
-          li[i].style.backgroundColor = "#303030";
+          setTimeout(function(){
+            li[i].style.backgroundColor = "#303030";
+          }, 750);
         }
       }
     } else {
@@ -140,8 +141,9 @@
         if (txtValue.toUpperCase().indexOf(filter) > -1) {
           li[i].getElementsByTagName("div")[0].getElementsByTagName("h5")[0].scrollIntoView({ block: "center",  behavior: "smooth" });
           li[i].style.backgroundColor = "#f39c12";
-        } else {
-          li[i].style.backgroundColor = "#303030";
+          setTimeout(function(){
+            li[i].style.backgroundColor = "#303030";
+          }, 750);
         }
       }
     } else {
