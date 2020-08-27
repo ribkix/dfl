@@ -97,8 +97,10 @@
   function searchBots() {
     var input = document.getElementById("searchBotsInput");
     var filter = input.value.toUpperCase();
-    ul = document.getElementById("botsList");
-    li = ul.getElementsByTagName("li");
+    var ul = document.getElementById("botsList");
+    var liP1 = ul.getElementsByTagName("li");
+    var liP2 = liP1.getElementsByTagName("div");
+    var li = liP2.getElementsByTagName("h5");
     for (i = 0; i < li.length; i++) {
       a = li[i].getElementsByTagName("a")[0];
       txtValue = a.textContent || a.innerText;
