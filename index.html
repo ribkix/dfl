@@ -1,168 +1,169 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <link rel="stylesheet" href="https://discordfastlist.ml/bootstrap.min.css">
-    <script src="https://discordfastlist.ml/jquery-3.5.1.js"></script>
-    <script src="https://discordfastlist.ml/bootstrap.min.js"></script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DiscordFastList</title>
-    <meta name="description" content="Upload Discord bot and servers without much trouble.">
-    <meta name="keywords" content="discord,bot,bots,server,servers,upload,fast">
-    <meta property="og:image" content="https://discordfastlist.ml/DFL_white_outline.png">
-    <meta name="theme-color" content="#7289DA">
-    <link rel="icon" href="https://discordfastlist.ml/DFL_white_outline.png">
-  </head>
-  <body>
-    <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
-      <a class="navbar-brand" href="https://discordfastlist.ml"><img width="75px" src="https://discordfastlist.ml/DFL_blurple.png"></a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+  <!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <link rel="stylesheet" href="https://discordfastlist.ml/bootstrap.min.css">
+      <script src="https://discordfastlist.ml/jquery-3.5.1.js"></script>
+      <script src="https://discordfastlist.ml/bootstrap.min.js"></script>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>DiscordFastList</title>
+      <meta name="description" content="Upload Discord bot and servers without much trouble.">
+      <meta name="keywords" content="discord,bot,bots,server,servers,upload,fast">
+      <meta property="og:image" content="https://discordfastlist.ml/DFL_white_outline.png">
+      <meta name="theme-color" content="#7289DA">
+      <link rel="icon" href="https://discordfastlist.ml/DFL_white_outline.png">
+    </head>
+    <body>
+      <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
+        <a class="navbar-brand" href="https://discordfastlist.ml"><img width="75px" src="https://discordfastlist.ml/DFL_blurple.png"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-      <div class="collapse navbar-collapse" id="navbarColor02">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="https://discordfastlist.ml">Home <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="https://discord.gg/9U8PMjC" target="_blank">Discord Server</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="https://discordfastlist.ml/bots">Bots</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="https://discordfastlist.ml/servers">Servers</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Upload</a>
-            <div class="dropdown-menu">
-              <a class="dropdown-item" href="https://discordfastlist.ml/upload/bot">Bot</a>
-              <a class="dropdown-item" href="https://discordfastlist.ml/upload/server">Server</a>
-            </div>
-          </li>
-        </ul>
-        <div class="form-group" style="width: 20%;" onchange="searchMode();">
-          <select style="margin-top: 16px;" id="searchModeSelect" class="custom-select">
-            <option value="1" selected>Bots</option>
-            <option value="2">Servers</option>
-          </select>
+        <div class="collapse navbar-collapse" id="navbarColor02">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="https://discordfastlist.ml">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://discord.gg/9U8PMjC" target="_blank">Discord Server</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://discordfastlist.ml/bots">Bots</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://discordfastlist.ml/servers">Servers</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Upload</a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="https://discordfastlist.ml/upload/bot">Bot</a>
+                <a class="dropdown-item" href="https://discordfastlist.ml/upload/server">Server</a>
+              </div>
+            </li>
+          </ul>
+          <div class="form-group" style="width: 20%;" onchange="searchMode();">
+            <select style="margin-top: 16px;" id="searchModeSelect" class="custom-select">
+              <option value="1" selected>Bots</option>
+              <option value="2">Servers</option>
+            </select>
+          </div>
+          <input style="width: 25%; display: block;" id="searchBotsInput" class="form-control mr-sm-2" type="text" placeholder="Search bots..." onkeyup="searchBots();">
+          <input style="width: 25%; display: none;" id="searchServersInput" class="form-control mr-sm-2" type="text" placeholder="Search servers..." onkeyup="searchServers();">
         </div>
-        <input style="width: 25%; display: block;" id="searchBotsInput" class="form-control mr-sm-2" type="text" placeholder="Search bots..." onkeyup="searchBots();">
-        <input style="width: 25%; display: none;" id="searchServersInput" class="form-control mr-sm-2" type="text" placeholder="Search servers..." onkeyup="searchServers();">
-      </div>
-    </nav>
-    
-    <br><br><br><br><br><br><br><br>
-    
-    <center>
-      <div>
-        <h1>Bots</h1>
-        <ul id="botsList" class="list-group" style="width: 50%;">
-          <li class="list-group-item list-group-item-action flex-column align-items-start">
-            <img src="https://cdn.discordapp.com/avatars/746131851399397377/ea0f7292a67891301c5fc5a6ca4da99d.png" width="125">
-            <div class="d-flex w-100 justify-content-between">
-              <h5 class="mb-1">Mr. Bruh Assistant</h5>
-              <small class="text-muted">Created by BruhDev#1337</small>
-            </div>
-            <p class="mb-1">Tracks how many times users said "bruh", a meme submition system, moderation and more!</p>
-            <a class="btn btn-primary" href="https://discord.com/api/oauth2/authorize?client_id=746131851399397377&permissions=125952&scope=bot" target="_blank">Invite</a>
-          </li>
-        </ul>
-        <br>
-        <a href="https://discordfastlist.ml/bots" class="btn btn-secondary">View all</a>
-      </div>
+      </nav>
+
+      <br><br><br><br><br><br><br><br>
+
+      <center>
+        <div>
+          <h1>Bots</h1>
+          <ul id="botsList" class="list-group" style="width: 50%;">
+            <li class="list-group-item list-group-item-action flex-column align-items-start">
+              <img src="https://cdn.discordapp.com/avatars/746131851399397377/ea0f7292a67891301c5fc5a6ca4da99d.png" width="125">
+              <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">Mr. Bruh Assistant</h5>
+                <small class="text-muted">Created by BruhDev#1337</small>
+              </div>
+              <p class="mb-1">Tracks how many times users said "bruh", a meme submition system, moderation and more!</p>
+              <small style="margin-right: 100px;" class="text-muted">Prefix: <code>,.</code>    Entry Point: <code>,.help</code></small>
+              <a class="btn btn-primary" href="https://discord.com/api/oauth2/authorize?client_id=746131851399397377&permissions=125952&scope=bot" target="_blank">Invite</a>
+            </li>
+          </ul>
+          <br>
+          <a href="https://discordfastlist.ml/bots" class="btn btn-secondary">View all</a>
+        </div>
+        <br><br>
+        <div>
+          <h1>Servers</h1>
+          <ul id="serversList" class="list-group" style="width: 50%;">
+            <li class="list-group-item list-group-item-action flex-column align-items-start">
+              <img src="https://cdn.discordapp.com/icons/745589638416302160/59fef3d19eeac20dd11a13a9a80fe389.png" width="125">
+              <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">Bruh City</h5>
+                <small class="text-muted">Created by BruhDev#1337</small>
+              </div>
+              <p class="mb-1">A community server with all of Bruh Dev's software and games.</p>
+              <a class="btn btn-primary" href="https://discord.gg/4wAAFPW" target="_blank">Invite</a>
+            </li>
+          </ul>
+          <br>
+          <a href="https://discordfastlist.ml/servers" class="btn btn-secondary">View all</a>
+        </div>
+      </center>
+
       <br><br>
-      <div>
-        <h1>Servers</h1>
-        <ul id="serversList" class="list-group" style="width: 50%;">
-          <li class="list-group-item list-group-item-action flex-column align-items-start">
-            <img src="https://cdn.discordapp.com/icons/745589638416302160/59fef3d19eeac20dd11a13a9a80fe389.png" width="125">
-            <div class="d-flex w-100 justify-content-between">
-              <h5 class="mb-1">Bruh City</h5>
-              <small class="text-muted">Created by BruhDev#1337</small>
-            </div>
-            <p class="mb-1">A community server with all of Bruh Dev's software and games.</p>
-            <a class="btn btn-primary" href="https://discord.gg/4wAAFPW" target="_blank">Invite</a>
-          </li>
-        </ul>
-        <br>
-        <a href="https://discordfastlist.ml/servers" class="btn btn-secondary">View all</a>
-      </div>
-    </center>
-    
-    <br><br>
-  </body>
-</html>
-<style>
-  body {
-    background-color: #7289DA;
-    color: #FFFFFF;
-  }
-  
-  #botsList li, #serversList li {
-    transition: 0.6s ease;
-  }
-</style>
-<script>
-  function flashEnd(li){
-    li.style.backgroundColor = "#303030";
-  }
-  
-  function searchBots() {
-    var input, filter, ul, li, a, i, txtValue;
-    input = document.getElementById("searchBotsInput");
-    filter = input.value.toUpperCase();
-    ul = document.getElementById("botsList");
-    li = ul.getElementsByTagName("li");
-    if (input.value != ""){
-      for (i = 0; i < li.length; i++) {
-        a = li[i].getElementsByTagName("div")[0].getElementsByTagName("h5")[0];
-        txtValue = a.textContent || a.innerText;
-        if (txtValue.toUpperCase().indexOf(filter) > -1) {
-          li[i].getElementsByTagName("div")[0].getElementsByTagName("h5")[0].scrollIntoView({ block: "center",  behavior: "smooth" });
-          li[i].style.backgroundColor = "#f39c12";
-          setTimeout(flashEnd.bind(null, li[i]), 750);
+    </body>
+  </html>
+  <style>
+    body {
+      background-color: #7289DA;
+      color: #FFFFFF;
+    }
+
+    #botsList li, #serversList li {
+      transition: 0.6s ease;
+    }
+  </style>
+  <script>
+    function flashEnd(li){
+      li.style.backgroundColor = "#303030";
+    }
+
+    function searchBots() {
+      var input, filter, ul, li, a, i, txtValue;
+      input = document.getElementById("searchBotsInput");
+      filter = input.value.toUpperCase();
+      ul = document.getElementById("botsList");
+      li = ul.getElementsByTagName("li");
+      if (input.value != ""){
+        for (i = 0; i < li.length; i++) {
+          a = li[i].getElementsByTagName("div")[0].getElementsByTagName("h5")[0];
+          txtValue = a.textContent || a.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].getElementsByTagName("div")[0].getElementsByTagName("h5")[0].scrollIntoView({ block: "center",  behavior: "smooth" });
+            li[i].style.backgroundColor = "#f39c12";
+            setTimeout(flashEnd.bind(null, li[i]), 750);
+          }
         }
+      } else {
+        window.scrollTo({top: 0, behavior: 'smooth'});
       }
-    } else {
-      window.scrollTo({top: 0, behavior: 'smooth'});
     }
-  }
-  
-  function searchServers() {
-    var input, filter, ul, li, a, i, txtValue;
-    input = document.getElementById("searchServersInput");
-    filter = input.value.toUpperCase();
-    ul = document.getElementById("serversList");
-    li = ul.getElementsByTagName("li");
-    if (input.value != ""){
-      for (i = 0; i < li.length; i++) {
-        a = li[i].getElementsByTagName("div")[0].getElementsByTagName("h5")[0];
-        txtValue = a.textContent || a.innerText;
-        if (txtValue.toUpperCase().indexOf(filter) > -1) {
-          li[i].getElementsByTagName("div")[0].getElementsByTagName("h5")[0].scrollIntoView({ block: "center",  behavior: "smooth" });
-          li[i].style.backgroundColor = "#f39c12";
-          setTimeout(flashEnd.bind(null, li[i]), 750);
+
+    function searchServers() {
+      var input, filter, ul, li, a, i, txtValue;
+      input = document.getElementById("searchServersInput");
+      filter = input.value.toUpperCase();
+      ul = document.getElementById("serversList");
+      li = ul.getElementsByTagName("li");
+      if (input.value != ""){
+        for (i = 0; i < li.length; i++) {
+          a = li[i].getElementsByTagName("div")[0].getElementsByTagName("h5")[0];
+          txtValue = a.textContent || a.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].getElementsByTagName("div")[0].getElementsByTagName("h5")[0].scrollIntoView({ block: "center",  behavior: "smooth" });
+            li[i].style.backgroundColor = "#f39c12";
+            setTimeout(flashEnd.bind(null, li[i]), 750);
+          }
         }
+      } else {
+        window.scrollTo({top: 0, behavior: 'smooth'});
       }
-    } else {
-      window.scrollTo({top: 0, behavior: 'smooth'});
     }
-  }
-  
-  function searchMode(){
-    var combobox, inputBots, inputServers, comboboxValue;
-    combobox = document.getElementById("searchModeSelect");
-    inputBots = document.getElementById("searchBotsInput");
-    inputServers = document.getElementById("searchServersInput");
-    comboboxValue = combobox.options[combobox.selectedIndex].text;
-    if (comboboxValue == "Bots"){
-      inputServers.style.display = "none";
-      inputBots.style.display = "block";
-    } else if (comboboxValue == "Servers"){
-      inputBots.style.display = "none";
-      inputServers.style.display = "block";
+
+    function searchMode(){
+      var combobox, inputBots, inputServers, comboboxValue;
+      combobox = document.getElementById("searchModeSelect");
+      inputBots = document.getElementById("searchBotsInput");
+      inputServers = document.getElementById("searchServersInput");
+      comboboxValue = combobox.options[combobox.selectedIndex].text;
+      if (comboboxValue == "Bots"){
+        inputServers.style.display = "none";
+        inputBots.style.display = "block";
+      } else if (comboboxValue == "Servers"){
+        inputBots.style.display = "none";
+        inputServers.style.display = "block";
+      }
     }
-  }
-</script>
+  </script>
