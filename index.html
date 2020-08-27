@@ -128,11 +128,11 @@
     }
   }
   
-  function searchBots() {
+  function searchServers() {
     var input, filter, ul, li, a, i, txtValue;
     input = document.getElementById("searchServersInput");
     filter = input.value.toUpperCase();
-    ul = document.getElementById("ServersList");
+    ul = document.getElementById("serversList");
     li = ul.getElementsByTagName("li");
     for (i = 0; i < li.length; i++) {
       a = li[i].getElementsByTagName("div")[0].getElementsByTagName("h5")[0];
