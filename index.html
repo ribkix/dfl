@@ -92,18 +92,13 @@
 </style>
 <script>
   function searchBots() {
-    var input = document.getElementById("searchBotsInput");
-    var filter = input.value.toUpperCase();
-    var ul = document.getElementById("botsList");
-    console.log(ul);
-    var liP1 = ul.getElementsByTagName("li");
-    console.log(liP1);
-    var liP2 = liP1.getElementsByTagName("div");
-    console.log(liP2);
-    var li = liP2.getElementsByTagName("h5");
-    console.log(li);
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById("searchBotsInput");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("botsList");
+    li = ul.getElementsByTagName("li");
     for (i = 0; i < li.length; i++) {
-      a = li[i].getElementsByTagName("a")[0];
+      a = li[i].getElementsByTagName("div")[0].getElementsByTagName("h5")[0];
       txtValue = a.textContent || a.innerText;
       if (txtValue.toUpperCase().indexOf(filter) > -1) {
         li[i].style.display = "";
