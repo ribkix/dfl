@@ -42,7 +42,15 @@
             </div>
           </li>
         </ul>
-        <input style="width: 25%;" id="searchBotsInput" class="form-control mr-sm-2" type="text" placeholder="Search bots..." onkeyup="searchBots();">
+        <div class="form-group" style="width: 20%;" onchange="searchMode();">
+          <select id="searchModeSelect" class="custom-select">
+            <option selected="">Bots</option>
+            <option value="1">Bots</option>
+            <option value="2">Servers</option>
+          </select>
+        </div>
+        <input style="width: 25%; display: block;" id="searchBotsInput" class="form-control mr-sm-2" type="text" placeholder="Search bots..." onkeyup="searchBots();">
+        <input style="width: 25%; display: none;" id="searchServersInput" class="form-control mr-sm-2" type="text" placeholder="Search servers..." onkeyup="search();">
       </div>
     </nav>
     
@@ -55,7 +63,7 @@
         <ul id="botsList" class="list-group" style="width: 50%;">
           <li class="list-group-item list-group-item-action flex-column align-items-start">
             <img src="https://cdn.discordapp.com/avatars/746131851399397377/ea0f7292a67891301c5fc5a6ca4da99d.png" width="125">
-            <div class="d-flex w-100 justify-content-between" align="center">
+            <div class="d-flex w-100 justify-content-between">
               <h5 class="mb-1">Mr. Bruh Assistant</h5>
               <small class="text-muted">Created by BruhDev#1337</small>
             </div>
@@ -98,6 +106,21 @@
       } else {
         li[i].style.display = "none";
       }
+    }
+  }
+  
+  function searchMode(){
+    var combobox, inputBots, inputServers, comboboxValue;
+    combobox = document.getElementById("searchModeSelect");
+    inputBots = document.getElementById("searchBotsInput");
+    inputServers = document.getElementByid("searchBotsServers");
+    comboboxValue = combobox.options[combobox.selectedIndex].text;
+    if (comboboxValue == "Bots"){
+      inputServers.style.display = "none";
+      inputBots.style.display = "block";
+    } else if (comboboxValue == "Servers"){
+      inputBots.style.display = "none";
+      inputServers.style.display = "block";
     }
   }
 </script>
