@@ -105,8 +105,9 @@
   }
 </style>
 <script>
-  var liS;
-  var liB;
+  function flashEnd(li){
+    li[i].style.backgroundColor = "#303030";
+  }
   
   function searchBots() {
     var input, filter, ul, li, a, i, txtValue;
@@ -114,7 +115,6 @@
     filter = input.value.toUpperCase();
     ul = document.getElementById("botsList");
     li = ul.getElementsByTagName("li");
-    liS = li;
     if (input.value != ""){
       for (i = 0; i < li.length; i++) {
         a = li[i].getElementsByTagName("div")[0].getElementsByTagName("h5")[0];
@@ -122,9 +122,7 @@
         if (txtValue.toUpperCase().indexOf(filter) > -1) {
           li[i].getElementsByTagName("div")[0].getElementsByTagName("h5")[0].scrollIntoView({ block: "center",  behavior: "smooth" });
           li[i].style.backgroundColor = "#f39c12";
-          setTimeout(function(){
-            liS[i].style.backgroundColor = "#303030";
-          }, 750);
+          setTimeout(flashEnd(li), 750);
         }
       }
     } else {
@@ -138,7 +136,6 @@
     filter = input.value.toUpperCase();
     ul = document.getElementById("serversList");
     li = ul.getElementsByTagName("li");
-    liB = li;
     if (input.value != ""){
       for (i = 0; i < li.length; i++) {
         a = li[i].getElementsByTagName("div")[0].getElementsByTagName("h5")[0];
@@ -146,9 +143,7 @@
         if (txtValue.toUpperCase().indexOf(filter) > -1) {
           li[i].getElementsByTagName("div")[0].getElementsByTagName("h5")[0].scrollIntoView({ block: "center",  behavior: "smooth" });
           li[i].style.backgroundColor = "#f39c12";
-          setTimeout(function(){
-            liB[i].style.backgroundColor = "#303030";
-          }, 750);
+          setTimeout(flashEnd(li), 750);
         }
       }
     } else {
