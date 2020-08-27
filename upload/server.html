@@ -58,21 +58,21 @@
         <div class="form-group row">
           <label for="Email" class="col-sm-2 col-form-label">Email / Discord Name + Tag (optional if you want an E-mail/DM when your server is checked)</label>
           <div class="col-sm-10" style="margin-top: 35px;">
-            <input id="Email" class="form-control-plaintext" type="text" name="extra_BotName" placeholder="email@example.com OR BruhDev#1337" />
+            <input id="Email" class="form-control-plaintext" type="text" name="extra_Email" placeholder="email@example.com OR BruhDev#1337" />
           </div>
         </div>
         <br>
         <div class="form-group row">
           <label for="ServerName" class="col-sm-2 col-form-label">Server Name</label>
           <div class="col-sm-10">
-            <input id="ServerName" class="form-control-plaintext" type="text" name="extra_BotName" placeholder="Epic Server" />
+            <input id="ServerName" class="form-control-plaintext" type="text" name="extra_ServerName" placeholder="Epic Server" />
           </div>
         </div>
         <br>
         <div class="form-group row">
           <label for="Description" class="col-sm-2 col-form-label">Server Description</label>
           <div class="col-sm-10">
-            <input id="Description" class="form-control-plaintext" type="text" name="extra_ClientID" placeholder="In this server you can talk with people, it has lots of bots to do fun things if you have noone to talk to." />
+            <input id="Description" class="form-control-plaintext" type="text" name="extra_ServerDescription" placeholder="In this server you can talk with people, it has lots of bots to do fun things if you have noone to talk to." />
           </div>
         </div>
         <br>
@@ -92,7 +92,7 @@
         <br>
         <input type="hidden" name="access_token" value="g1inszi8hsiblci0fj2b0sqo" />
         <br>
-        <input class="btn btn-secondary" id="submit_form" type="submit" value="Upload" />
+        <input class="btn btn-secondary" id="submit_form" type="submit" value="Upload" disabled />
         <br>
         <p id="error_form">*Make sure all fields are filled before uploading. 25 servers are allowed to be uploaded per day, servers uploaded today: 25 / 25.</p>
         <p id="error_form">Please allow 3 days at maximum for your server to be checked for approval.</p>
