@@ -49,7 +49,7 @@
           </select>
         </div>
         <input style="width: 25%; display: block;" id="searchBotsInput" class="form-control mr-sm-2" type="text" placeholder="Search bots..." onkeyup="searchBots();">
-        <input style="width: 25%; display: none;" id="searchServersInput" class="form-control mr-sm-2" type="text" placeholder="Search servers..." onkeyup="search();">
+        <input style="width: 25%; display: none;" id="searchServersInput" class="form-control mr-sm-2" type="text" placeholder="Search servers..." onkeyup="searchServers();">
       </div>
     </nav>
     
@@ -120,7 +120,8 @@
       a = li[i].getElementsByTagName("div")[0].getElementsByTagName("h5")[0];
       txtValue = a.textContent || a.innerText;
       if (txtValue.toUpperCase().indexOf(filter) > -1) {
-        li[i].style.display = "";
+        li[i].getElementsByTagName("div")[0].getElementsByTagName("h5")[0].style.display = "";
+        li[i].getElementsByTagName("div")[0].getElementsByTagName("h5")[0].scrollIntoView({ block: 'end',  behavior: 'smooth' });
       } else {
         li[i].style.display = "none";
       }
@@ -138,6 +139,7 @@
       txtValue = a.textContent || a.innerText;
       if (txtValue.toUpperCase().indexOf(filter) > -1) {
         li[i].style.display = "";
+        li[i].getElementsByTagName("div")[0].getElementsByTagName("h5")[0].scrollIntoView({ block: 'end',  behavior: 'smooth' });
       } else {
         li[i].style.display = "none";
       }
