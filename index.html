@@ -98,9 +98,13 @@
     var input = document.getElementById("searchBotsInput");
     var filter = input.value.toUpperCase();
     var ul = document.getElementById("botsList");
+    console.log(ul);
     var liP1 = ul.getElementsByTagName("li");
+    console.log(liP1);
     var liP2 = liP1.getElementsByTagName("div");
+    console.log(liP2);
     var li = liP2.getElementsByTagName("h5");
+    console.log(li);
     for (i = 0; i < li.length; i++) {
       a = li[i].getElementsByTagName("a")[0];
       txtValue = a.textContent || a.innerText;
