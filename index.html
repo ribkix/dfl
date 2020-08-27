@@ -120,10 +120,7 @@
       a = li[i].getElementsByTagName("div")[0].getElementsByTagName("h5")[0];
       txtValue = a.textContent || a.innerText;
       if (txtValue.toUpperCase().indexOf(filter) > -1) {
-        li[i].getElementsByTagName("div")[0].getElementsByTagName("h5")[0].style.display = "";
         li[i].getElementsByTagName("div")[0].getElementsByTagName("h5")[0].scrollIntoView({ block: 'end',  behavior: 'smooth' });
-      } else {
-        li[i].style.display = "none";
       }
     }
   }
@@ -138,10 +135,7 @@
       a = li[i].getElementsByTagName("div")[0].getElementsByTagName("h5")[0];
       txtValue = a.textContent || a.innerText;
       if (txtValue.toUpperCase().indexOf(filter) > -1) {
-        li[i].style.display = "";
-        li[i].getElementsByTagName("div")[0].getElementsByTagName("h5")[0].scrollIntoView({ block: 'end',  behavior: 'smooth' });
-      } else {
-        li[i].style.display = "none";
+        li[i].getElementsByTagName("div")[0].getElementsByTagName("h5")[0].scrollIntoView({ block: "center",  behavior: "smooth" });
       }
     }
   }
