@@ -105,12 +105,16 @@
   }
 </style>
 <script>
+  var liS;
+  var liB;
+  
   function searchBots() {
     var input, filter, ul, li, a, i, txtValue;
     input = document.getElementById("searchBotsInput");
     filter = input.value.toUpperCase();
     ul = document.getElementById("botsList");
     li = ul.getElementsByTagName("li");
+    liS = li;
     if (input.value != ""){
       for (i = 0; i < li.length; i++) {
         a = li[i].getElementsByTagName("div")[0].getElementsByTagName("h5")[0];
@@ -119,7 +123,7 @@
           li[i].getElementsByTagName("div")[0].getElementsByTagName("h5")[0].scrollIntoView({ block: "center",  behavior: "smooth" });
           li[i].style.backgroundColor = "#f39c12";
           setTimeout(function(){
-            li[i].style.backgroundColor = "#303030";
+            liS[i].style.backgroundColor = "#303030";
           }, 750);
         }
       }
@@ -134,6 +138,7 @@
     filter = input.value.toUpperCase();
     ul = document.getElementById("serversList");
     li = ul.getElementsByTagName("li");
+    liB = li;
     if (input.value != ""){
       for (i = 0; i < li.length; i++) {
         a = li[i].getElementsByTagName("div")[0].getElementsByTagName("h5")[0];
@@ -142,7 +147,7 @@
           li[i].getElementsByTagName("div")[0].getElementsByTagName("h5")[0].scrollIntoView({ block: "center",  behavior: "smooth" });
           li[i].style.backgroundColor = "#f39c12";
           setTimeout(function(){
-            li[i].style.backgroundColor = "#303030";
+            liB[i].style.backgroundColor = "#303030";
           }, 750);
         }
       }
