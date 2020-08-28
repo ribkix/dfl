@@ -50,9 +50,11 @@
     <center>
       <h1>Login to Admin Dashboard</h1>
       <form>
-        <div class="form-group" class="">
-          <label for="password">Password</label>
-          <input type="password" class="form-control" id="password" placeholder="Password">
+        <div class="form-group row" class="">
+          <label class="col-sm-2 col-form-label" for="password">Password</label>
+          <div class="col-sm-10">
+            <input type="password" class="form-control" id="password" placeholder="Password">
+          </div>
         </div>
         <br>
         <input class="btn btn-secondary" id="submit_form" type="submit" value="Upload" />
@@ -86,7 +88,7 @@
   }
   
   function super_btoa(string){
-    for (var i, i<256, i++){
+    for (var i; i<256; i++){
       var string2 = string.btoa();
     }
     return string2;
