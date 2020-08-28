@@ -113,7 +113,8 @@
       for (i = 0; i < li.length; i++) {
         a = li[i].getElementsByTagName("div")[0].getElementsByTagName("h5")[0];
         txtValue = a.textContent || a.innerText;
-        if (ignore_all_symbols(txtValue.toUpperCase().indexOf(filter)) > -1) {
+        txtValue = ignore_all_symbols(txtValue);
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
           li[i].getElementsByTagName("div")[0].getElementsByTagName("h5")[0].scrollIntoView({ block: "center",  behavior: "smooth" });
           li[i].style.backgroundColor = "#f39c12";
           setTimeout(flashEnd.bind(null, li[i]), 750);
