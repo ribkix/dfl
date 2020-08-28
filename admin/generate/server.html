@@ -118,7 +118,7 @@
   }
 </style>
 <script>
-  function generateBotCode(){
+  function generateServerCode(){
     document.getElementById("generatedCode").innerHTML = '<li class="list-group-item list-group-item-action flex-column align-items-start">\n\t<img src="' + document.getElementById("ServerIcon").value + '" width="125">\n\t<div class="d-flex w-100 justify-content-between">\n\t\t<h5 class="mb-1">' + document.getElementById("ServerName").value + '</h5>\n\t\t<small class="text-muted">Owned by <code>' + document.getElementById("ServerOwner").value + '</code></small>\n\t</div>\n\t<p class="mb-1">' + document.getElementById("Description").value + '</p>\n\t<a class="btn btn-primary" href="' + document.getElementById("Invite").value + '" target="_blank">Invite</a>\n\t<a class="btn btn-danger" href="https://discordfastlist.ml/report/server" target="_blank">Report</a>\n</li>';
   }
   
