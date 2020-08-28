@@ -120,6 +120,7 @@
         }
       }
       var idDone = id.replace(idUserDone,"").split("-").join(" ");
+      idDone = idDone.substring(0, idDone.length - 1);
       document.getElementById("searchBotsInput").value = idDone;
       searchBots();
     }
