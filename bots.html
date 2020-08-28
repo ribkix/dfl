@@ -112,7 +112,7 @@
     filter = input.toUpperCase();
     ul = document.getElementById("botsList");
     li = ul.getElementsByTagName("li");
-    if (input.value != ""){
+    if (input != ""){
       for (i = 0; i < li.length; i++) {
         a = li[i].getElementsByTagName("div")[0].getElementsByTagName("h5")[0];
         txtValue = a.textContent || a.innerText;
@@ -130,9 +130,7 @@
   document.addEventListener("DOMContentLoaded", function(){
     if (location.href.includes("#")){
       var id = location.href.substring(location.href.lastIndexOf('#') + 1);
-      console.log(id);
       var idUser = id.split("").reverse().join("");
-      console.log(idUser);
       var idUserDone = "";
       for (var i = 0; i < idUser.length; i++) {
         if (idUser.charAt(i) != "-"){
@@ -142,9 +140,7 @@
           break;
         }
       }
-      console.log(idUserDone);
       var idDone = id.replace(idUserDone,"").split("-").join(" ");
-      console.log(idDone);
       searchBotsId(idDone);
     }
   });
