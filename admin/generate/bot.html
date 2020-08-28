@@ -58,7 +58,6 @@
       <br>
       <h1>Generate Bot Code</h1>
       <br>
-      <form onsubmit="generateBotCode();">
         <div class="form-group row">
           <label for="BotCreator" class="col-sm-2 col-form-label">Bot Creator</label>
           <div class="col-sm-10">
@@ -108,12 +107,11 @@
           </div>
         </div>
         <br>
-        <input class="btn btn-secondary" type="submit" value="Generate" />
+        <button class="btn btn-secondary" onclick="generateBotCode();">Generate</button>
         <br>
         <br>
         <p>Generated code:</p>
         <textarea id="generatedCode"></textarea>
-      </form>
     </center>
     
     <br><br>
