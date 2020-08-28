@@ -129,7 +129,19 @@
   
   document.addEventListener("DOMContentLoaded", function(){
     if (location.href.includes("#")){
-      searchBotsId(location.href.substring(location.href.lastIndexOf('#') + 1));
+      var id = location.href.substring(location.href.lastIndexOf('#') + 1);
+      var idUser = id.split().reverse().join("");
+      var idUserDone = "";
+      for (var i = 0; i < idUser.length; i++) {
+        if (idUser.charAt(i) != "-"){
+          idUserDone = idUserDone.concat(idUser.charAt(i));
+        } else {
+          idUserDone = idUserDone.split().reverse().join("");
+          break;
+        }
+      }
+      var idDone = id.replace(idUserDone,"").replace("-"," ");
+      searchBotsId(idDone);
     }
   });
 </script>
