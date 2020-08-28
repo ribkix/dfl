@@ -143,7 +143,7 @@
         }
       }
       console.log(idUserDone);
-      var idDone = id.replace(idUserDone,"").replaceAll("-"," ");
+      var idDone = id.replace(idUserDone,"").split("-").join(" ");
       console.log(idDone);
       searchBotsId(idDone);
     }
