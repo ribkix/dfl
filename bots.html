@@ -88,13 +88,14 @@
   function searchBots() {
     var input, filter, ul, li, a, i, txtValue;
     input = document.getElementById("searchBotsInput");
-    filter = input.value.toUpperCase();
+    filter = input.value.toUpperCase().split("`").join("").split("~").join("").split("!").join("").split("@").join("").split("#").join("").split("$").join("").split("%").join("").split("^").join("").split("&").join("").split("*").join("").split("(").join("").split(")").join("").split("-").join("").split("_").join("").split("=").join("").split("+").join("").split("[").join("").split("{").join("").split("}").join("").split("]").join("").split(";").join("").split(":").join("").split("'").join("").split('"').join("").split(",").join("").split("<").join("").split(">").join("").split("/").join("").split("?");
     ul = document.getElementById("botsList");
     li = ul.getElementsByTagName("li");
     if (input.value != ""){
       for (i = 0; i < li.length; i++) {
         a = li[i].getElementsByTagName("div")[0].getElementsByTagName("h5")[0];
         txtValue = a.textContent || a.innerText;
+        txtValue = txtValue.split("`").join("").split("~").join("").split("!").join("").split("@").join("").split("#").join("").split("$").join("").split("%").join("").split("^").join("").split("&").join("").split("*").join("").split("(").join("").split(")").join("").split("-").join("").split("_").join("").split("=").join("").split("+").join("").split("[").join("").split("{").join("").split("}").join("").split("]").join("").split(";").join("").split(":").join("").split("'").join("").split('"').join("").split(",").join("").split("<").join("").split(">").join("").split("/").join("").split("?")
         if (txtValue.toUpperCase().indexOf(filter) > -1) {
           li[i].getElementsByTagName("div")[0].getElementsByTagName("h5")[0].scrollIntoView({ block: "center",  behavior: "smooth" });
           li[i].style.backgroundColor = "#f39c12";
