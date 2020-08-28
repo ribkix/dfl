@@ -82,15 +82,17 @@
 </style>
 <script>
   function super_atob(string){
+    var string2;
     for (var i; i < 256; i++){
-      var string2 = atob(string);
+      string2 = window.atob(string);
     }
     return string2;
   }
   
   function super_btoa(string){
+    var string2;
     for (var i; i < 256; i++){
-      var string2 = string.btoa();
+      string2 = window.btoa(string);
     }
     return string2;
   }
