@@ -106,6 +106,7 @@
         a = li[i].getElementsByTagName("div")[0].getElementsByTagName("h5")[0];
         txtValue = a.textContent || a.innerText;
         if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          history.pushState({}, null, "https://discordfastlist.ml/servers#" + li[i].id);
           li[i].getElementsByTagName("div")[0].getElementsByTagName("h5")[0].scrollIntoView({ block: "center",  behavior: "smooth" });
           li[i].style.backgroundColor = "#f39c12";
           setTimeout(flashEnd.bind(null, li[i]), 750);
