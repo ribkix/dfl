@@ -133,17 +133,7 @@
 </style>
 <script>
   function generateBotCode(){
-    document.getElementById("generatedCode").innerHTML = '<li class="list-group-item list-group-item-action flex-column align-items-start">\
-      <img src="' + document.getElementById("BotAvatar").value + '" width="125">\
-      <div class="d-flex w-100 justify-content-between">\
-        <h5 class="mb-1">' + document.getElementById("BotName").value + '</h5>\
-        <small class="text-muted">Created by <code>' + document.getElementById("BotCreator") + '</code></small>\
-      </div>\
-      <p class="mb-1">' + document.getElementById("Description").value + '</p>\
-      <small style="margin-right: 100px;" class="text-muted">Prefix: <code>' + document.getElementById("Prefix").value + '</code>    Entry Point: <code>' + document.getElementById("EntryPoint").value + '</code></small>\
-      <a class="btn btn-primary" href="' + document.getElementById("Invite").value + '" target="_blank">Invite</a>\
-      <a class="btn btn-danger" href="https://discordfastlist.ml/report/bot" target="_blank">Report</a>\
-    </li>';
+    document.getElementById("generatedCode").innerHTML = '<li class="list-group-item list-group-item-action flex-column align-items-start">\n\t<img src="' + document.getElementById("BotAvatar").value + '" width="125">\n\t<div class="d-flex w-100 justify-content-between">\n\t\t<h5 class="mb-1">' + document.getElementById("BotName").value + '</h5>\n\t\t<small class="text-muted">Created by <code>' + document.getElementById("BotCreator") + '</code></small>\n\t</div>\n\t<p class="mb-1">' + document.getElementById("Description").value + '</p>\n\t<small style="margin-right: 100px;" class="text-muted">Prefix: <code>' + document.getElementById("Prefix").value + '</code>    Entry Point: <code>' + document.getElementById("EntryPoint").value + '</code></small>\n\t<a class="btn btn-primary" href="' + document.getElementById("Invite").value + '" target="_blank">Invite</a>\n\t<a class="btn btn-danger" href="https://discordfastlist.ml/report/bot" target="_blank">Report</a>\n</li>';
   }
   
   function hideWarn(){
