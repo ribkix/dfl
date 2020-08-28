@@ -105,28 +105,7 @@
       window.scrollTo({top: 0, behavior: 'smooth'});
     }
   }
-  
-  function searchBotsId(id) {
-    var input, filter, ul, li, a, i, txtValue;
-    input = id;
-    filter = input.toUpperCase();
-    ul = document.getElementById("botsList");
-    li = ul.getElementsByTagName("li");
-    if (input != ""){
-      for (i = 0; i < li.length; i++) {
-        a = li[i].getElementsByTagName("div")[0].getElementsByTagName("h5")[0];
-        txtValue = a.textContent || a.innerText;
-        if (txtValue.toUpperCase().indexOf(filter) > -1) {
-          li[i].getElementsByTagName("div")[0].getElementsByTagName("h5")[0].scrollIntoView({ block: "center",  behavior: "smooth" });
-          li[i].style.backgroundColor = "#f39c12";
-          setTimeout(flashEnd.bind(null, li[i]), 750);
-        }
-      }
-    } else {
-      window.scrollTo({top: 0, behavior: 'smooth'});
-    }
-  }
-  
+
   document.addEventListener("DOMContentLoaded", function(){
     if (location.href.includes("#")){
       var id = location.href.substring(location.href.lastIndexOf('#') + 1);
@@ -141,7 +120,8 @@
         }
       }
       var idDone = id.replace(idUserDone,"").split("-").join(" ");
-      searchBotsId(idDone);
+      document.getElementById("searchBotsInput").value = idDone;
+      searchBots();
     }
   });
 </script>
