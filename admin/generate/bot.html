@@ -133,7 +133,7 @@
 </style>
 <script>
   function generateBotCode(){
-    document.getElementByid("generatedCode").innerHTML = '<li class="list-group-item list-group-item-action flex-column align-items-start">\
+    document.getElementById("generatedCode").innerHTML = '<li class="list-group-item list-group-item-action flex-column align-items-start">\
       <img src="' + document.getElementById("BotAvatar").value + '" width="125">\
       <div class="d-flex w-100 justify-content-between">\
         <h5 class="mb-1">' + document.getElementById("BotName").value + '</h5>\
@@ -144,7 +144,6 @@
       <a class="btn btn-primary" href="' + document.getElementById("Invite").value + '" target="_blank">Invite</a>\
       <a class="btn btn-danger" href="https://discordfastlist.ml/report/bot" target="_blank">Report</a>\
     </li>';
-    return false;
   }
   
   function hideWarn(){
