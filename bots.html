@@ -52,7 +52,7 @@
       <div>
         <h1>Bots</h1>
         <ul id="botsList" class="list-group" style="width: 50%;">
-          <a href="https://discordfastlist.ml/bots#Mr-Bruh-Assistant-BruhDev1337"><li id="Mr-Bruh-Assistant-BruhDev1337" class="list-group-item list-group-item-action flex-column align-items-start">
+          <li onclick="href('https://discordfastlist.ml/bots#Mr-Bruh-Assistant-BruhDev1337');" id="Mr-Bruh-Assistant-BruhDev1337" class="list-group-item list-group-item-action flex-column align-items-start">
             <img src="https://cdn.discordapp.com/avatars/746131851399397377/ea0f7292a67891301c5fc5a6ca4da99d.png" width="125">
             <div class="d-flex w-100 justify-content-between">
               <h5 class="mb-1">Mr Bruh Assistant (Mr. Bruh Assistant)</h5>
@@ -62,7 +62,7 @@
             <small style="margin-right: 100px;" class="text-muted">Prefix: <code>,.</code>    Entry Point: <code>,.help</code></small>
             <a class="btn btn-primary" href="https://discord.com/api/oauth2/authorize?client_id=746131851399397377&permissions=125952&scope=bot" target="_blank">Invite</a>
             <a class="btn btn-danger" href="https://discordfastlist.ml/report/bot" target="_blank">Report</a>
-          </li></a>
+          </li>
         </ul>
       </div>
     </center>
@@ -81,6 +81,10 @@
   }
 </style>
 <script>
+  function href(link){
+    location.href = link;
+  }
+  
   function flashEnd(li){
     li.style.backgroundColor = "#303030";
   }
