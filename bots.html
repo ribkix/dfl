@@ -77,20 +77,16 @@
   }
   
   #botsList li {
-    transition: 0.6s ease;
-  }
-  
-  .list-group {
     cursor: pointer;
     display: block;
     height: 200px;
     width: 300px;
     background-color: grey;
     margin: 0 auto;
-    transition: box-shadow 0.1s, transform 0.1s;
+    transition: box-shadow 0.6s, transform 0.1s;
   }
   
-  .list-group:hover {
+  #botsList li:hover {
     box-shadow: 0px 0px 30px rgba(0,0,0, 0.6);
     cursor: pointer;
   }
@@ -156,7 +152,7 @@
   }
 
   document.addEventListener("DOMContentLoaded", function(){
-    var els3D = document.querySelectorAll("list-group");
+    var els3D = document.querySelectorAll("list-group-item");
     els3D.forEach(function(el3D){
       effect3D(el3D);
     });
