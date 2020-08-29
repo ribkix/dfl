@@ -82,20 +82,22 @@
   }
 </style>
 <script>
+  function effect3D_handleMove(e){
+    const xVal = e.layerX;
+    const yVal = e.layerY;
+    const yRotation = 20 * ((xVal - width / 2) / width);
+    const xRotation = -20 * ((yVal - height / 2) / height);
+    const string = 'perspective(500px) scale(1.1) rotateX(' + xRotation + 'deg) rotateY(' + yRotation + 'deg)';
+    el.style.transform = string;
+  }
+  
   function effect3D(element){
     let el = element;
     
     const height = el.clientHeight;
     const width = el.clientWidth;
 
-    el.addEventListener('mousemove', function() {
-      const xVal = e.layerX;
-      const yVal = e.layerY;
-      const yRotation = 20 * ((xVal - width / 2) / width);
-      const xRotation = -20 * ((yVal - height / 2) / height);
-      const string = 'perspective(500px) scale(1.1) rotateX(' + xRotation + 'deg) rotateY(' + yRotation + 'deg)';
-      el.style.transform = string;
-    });
+    el.addEventListener('mousemove', effect3D_handleMove);
 
     el.addEventListener('mouseout', function() {
       el.style.transform = 'perspective(500px) scale(1) rotateX(0) rotateY(0)';
