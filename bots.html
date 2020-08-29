@@ -82,6 +82,8 @@
   }
 </style>
 <script>
+  const width, height;
+  
   function effect3D_handleMove(e){
     const xVal = e.layerX;
     const yVal = e.layerY;
@@ -94,8 +96,8 @@
   function effect3D(element){
     let el = element;
     
-    const height = el.clientHeight;
-    const width = el.clientWidth;
+    height = el.clientHeight;
+    width = el.clientWidth;
 
     el.addEventListener('mousemove', effect3D_handleMove);
 
