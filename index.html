@@ -152,6 +152,7 @@
     frame.style.boxShadow = '0 20px 32px -8px rgba(9,20,66,0.25)';
     frame.style.zIndex = '9999';
     frame.style.transition = 'left 1s ease, bottom 1s ease, right 1s ease';
+    frame.id = "statusFrame";
 
     var mobile;
     if (mobile = screen.width < 450) {
@@ -170,7 +171,6 @@
     }
 
     document.body.appendChild(frame);
-    frame.contentWindow.document.querySelector(".page-link").href = "https://status.discordfastlist.ml";
 
     var actions = {
       showFrame: function() {
@@ -300,6 +300,7 @@
   }
 
   document.addEventListener("DOMContentLoaded", function(){
+    document.getElementById("statusFrame").contentWindow.document.querySelector(".page-link").href = "https://status.discordfastlist.ml";
     setTimeout(statusEmbedTest, 2000);
     
     var els3D = document.querySelectorAll(".list-group-item");
