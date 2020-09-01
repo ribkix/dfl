@@ -146,8 +146,9 @@
   (function(){
 
     var frame = document.createElement('iframe');
-    frame.src = 'https://discordfastlist.ml/statusFrame.html';
+    frame.src = 'https://zmtm33zh8wyz.statuspage.io/embed/frame';
     frame.style.position = 'fixed';
+    frame.contentWindow.document.querySelector(".page-link").href = "https://status.discordfastlist.ml";
     frame.style.border = 'none';
     frame.style.boxShadow = '0 20px 32px -8px rgba(9,20,66,0.25)';
     frame.style.zIndex = '9999';
